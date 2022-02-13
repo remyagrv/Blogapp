@@ -6,6 +6,8 @@ const Schema = mongoose.Schema;
 var articleSchema = new Schema({
     name:String,
     username:String,
+    title:String,
+    description:String,
     upvotes: Number,
     comments:Array
 });

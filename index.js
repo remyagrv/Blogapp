@@ -77,8 +77,23 @@ app.post('/api/registration/signup', (req,res)=>{
      });
  })
 
-
-
+// add new article
+app.post('/api/addarticle', (req,res)=>{
+   
+    var articledata = {
+        name:req.body.name,
+        username:req.body.username,
+        title:req.body.title,
+        description:req.body.description
+        
+    }
+    console.log(articledata)  ;
+    const user = new ArticleInfo(articledata);
+    user.save();
+    
+       res.send((ArticleInfo));
+     });
+ 
 // upvote routing
 app.post('/api/article/:name/upvotes', (req,res)=>{
     const articleName = req.params.name;
